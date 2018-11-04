@@ -32,8 +32,9 @@ def generate_img(texts):
     # 生成词云图片
     data = " ".join(text for text in texts)
 
-    mask_img = imread('./tiankonguse-logo.jpg', flatten=True)
+    mask_img = imread('./love.png', flatten=True)
     wordcloud = WordCloud(
+        font_path="HYQiHei-25J.ttf",
         background_color='white',
         mask=mask_img
     ).generate(data)
