@@ -3,12 +3,11 @@
 import json
 import re
 import time
-from http.cookies import SimpleCookie
 
-import jieba.analyse
 import matplotlib.pyplot as plt
-import requests
+import jieba.analyse
 from scipy.misc import imread
+#import imageio
 from wordcloud import WordCloud
 
 
@@ -17,7 +16,7 @@ def readData(inputFile):
 
     file_obj = open(inputFile)
     all_lines = file_obj.readlines()
-    f.close()
+    file_obj.close()
     return all_lines
 
 
@@ -44,4 +43,4 @@ def generate_img(texts):
 
 
 if __name__ == '__main__':
-    generate_img(word_segment(readData()))
+    generate_img(word_segment(readData("data.txt")))
